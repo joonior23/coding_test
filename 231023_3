@@ -1,0 +1,12 @@
+#'추억 점수' 문제
+def solution(name, yearning, photo):
+    answer = []
+    temp_dict = {name[0]:yearning[0]}
+    for i in range(1,len(name)):
+        temp_dict[name[i]] = yearning[i]
+    for i in range(len(photo)):
+        sum = 0
+        for j in range(len(photo[i])):
+            sum += temp_dict.get(photo[i][j],0)
+        answer.append(sum)
+    return answer
